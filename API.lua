@@ -79,11 +79,12 @@ while getgenv().sendReq do
         ["jobid"] = tostring(game.JobId),
         ["displayname"] = game:GetService("Players").LocalPlayer.DisplayName,
         ["totalpets"] = tostring(#save.Pets),
-        ["gems"] = tostring(math.floor(save["Diamonds"])),
-        ["coins"] = tostring(math.floor(save["Coins"])),
-        ["tech"] = tostring(math.floor(save["Tech Coins"])),
-        ["fantasy"] = tostring(math.floor(save["Fantasy Coins"])),
-        ["stats"] = currentStats
+        ["gems"] = tostring(Commas(math.floor(save["Diamonds"]))),
+        ["coins"] = tostring(Commas(math.floor(save["Coins"]))),
+        ["tech"] = tostring(Commas(math.floor(save["Tech Coins"]))),
+        ["fantasy"] = tostring(Commas(math.floor(save["Fantasy Coins"]))),
+        ["stats"] = currentStats,
+        ["discordid"] = discordId
     }
     sendTable = game:GetService("HttpService"):JSONEncode(dataTable)
     request = http_request or request or HttpPost or syn.request
@@ -101,12 +102,3 @@ while getgenv().sendReq do
     end
     wait(10)
 end
-
-
-
-
-
-
-
-
-
