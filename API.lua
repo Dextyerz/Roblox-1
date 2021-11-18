@@ -1,6 +1,3 @@
-discordId = '347818082787393539'
-
-
 getgenv().sendReq = true
 
 local Lib = require(game.ReplicatedStorage:WaitForChild("Framework"):WaitForChild("Library"))
@@ -104,3 +101,12 @@ while getgenv().sendReq do
     end
     wait(10)
 end
+
+
+
+
+
+
+
+
+
