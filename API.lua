@@ -43,7 +43,20 @@ for i,v in pairs(types) do
     end)
 end
 
+mythicalCount = 0
+
+spawn(function()
+    Lib.Network.Fired("Open Egg"):Connect(function(egg, openTable)
+        for i,v in ipairs(openTable) do
+            if (Lib.Directory.Pets[v.Id]["rarity"] == "Mythical") then
+                mythicalCount = mythicalCount + 1
+            end
+        end
+    end)
+end)
+
 function connect()
+    print("Trying to connect")
     save = Lib.Save.Get()
     dataTable = {
         ["username"] = game:GetService("Players").LocalPlayer.Name,
@@ -56,7 +69,8 @@ function connect()
         ["tech"] = tostring(Commas(math.floor(save["Tech Coins"]))),
         ["fantasy"] = tostring(Commas(math.floor(save["Fantasy Coins"]))),
         ["stats"] = currentStats,
-        ["discordid"] = discordId
+        ["discordid"] = discordId,
+        ["mythicals"] = tostring(mythicalCount)
     }
     sendTable = game:GetService("HttpService"):JSONEncode(dataTable)
     local headers = {
@@ -64,7 +78,17 @@ function connect()
     }
     request = http_request or request or HttpPost or syn.request
     sendData = {Url = "https://testdiscordbot.4lve.repl.co/newconnection", Body = sendTable, Method = "POST", Headers = headers}
-    request(sendData)
+    data = (request(sendData))
+    if not data then
+        wait(5)
+        connect()
+    end
+    if (data["Body"] == "false") then
+        getgenv().sendReq = false
+        spawn(function()
+            Lib.Message.New("Discord Id Invalid")
+        end)
+    end
 end
 connect()
 
@@ -84,7 +108,8 @@ while getgenv().sendReq do
         ["tech"] = tostring(Commas(math.floor(save["Tech Coins"]))),
         ["fantasy"] = tostring(Commas(math.floor(save["Fantasy Coins"]))),
         ["stats"] = currentStats,
-        ["discordid"] = discordId
+        ["discordid"] = discordId,
+        ["mythicals"] = tostring(mythicalCount)
     }
     sendTable = game:GetService("HttpService"):JSONEncode(dataTable)
     request = http_request or request or HttpPost or syn.request
@@ -98,6 +123,7 @@ while getgenv().sendReq do
     if (data["Body"] == "stop") then
         getgenv().sendReq = false
     elseif (data["Body"] == "reconnect") then
+        print("Lost connection retrying")
         connect()
     end
     wait(10)
