@@ -48,7 +48,7 @@ mythicalCount = 0
 spawn(function()
     Lib.Network.Fired("Open Egg"):Connect(function(egg, openTable)
         for i,v in ipairs(openTable) do
-            if (Lib.Directory.Pets[v.Id]["rarity"] == "Mythical") then
+            if (Lib.Directory.Pets[v.id]["rarity"] == "Mythical") then
                 mythicalCount = mythicalCount + 1
             end
         end
