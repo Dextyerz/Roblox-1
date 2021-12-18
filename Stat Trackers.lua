@@ -15,6 +15,7 @@ end
 
 menus.Diamonds.LayoutOrder = 99988
 menus['Tech Coins'].LayoutOrder = 99992
+menus['Gingerbread'].LayoutOrder = 99993
 menus['Fantasy Coins'].LayoutOrder = 99994
 menus.Coins.LayoutOrder = 99996
 menus.UIListLayout.HorizontalAlignment = 2
