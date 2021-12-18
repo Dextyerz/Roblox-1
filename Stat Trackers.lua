@@ -14,7 +14,7 @@ function get(thistype)
 end
 
 menus.Diamonds.LayoutOrder = 99988
-menus['Tech Coins'].LayoutOrder = 99991
+menus['Tech Coins'].LayoutOrder = 99990
 menus['Gingerbread'].LayoutOrder = 99992
 menus['Fantasy Coins'].LayoutOrder = 99994
 menus.Coins.LayoutOrder = 99996
