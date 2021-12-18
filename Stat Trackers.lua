@@ -2,7 +2,7 @@ local gamelibrary = require(game:GetService("ReplicatedStorage").Framework.Libra
 local Save = gamelibrary.Save.Get
 local Commas = gamelibrary.Functions.Commas
 local types = {}
-local menus = game:GetService("Players").LocalPlayer.PlayerGui.Main.Right
+local menus = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("Main"):WaitForChild("Right")
 for i, v in pairs(menus:GetChildren()) do
     if v.ClassName == 'Frame' and v.Name ~= 'Rank' and not string.find(v.Name, "2") then
         table.insert(types, v.Name)
