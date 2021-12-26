@@ -108,7 +108,7 @@ function sendPets(coinID)
 			console.newline()
 			console.log('[4] Chest Destroyed Teleporting To Another Game')
 			getgenv().totalServers = getgenv().totalServers + 1
-			spawn(function
+			spawn(function()
 				Teleport()
 			end)
 			pcall(function()
@@ -124,7 +124,7 @@ function sendPets(coinID)
 	wait(60)
 	console.log('[4] Pets Took To Long To Destroy Chest Server Hopping Anyways')
 	getgenv().totalServers = getgenv().totalServers + 1
-	spawn(function
+	spawn(function()
 		Teleport()
 	end)
 	pcall(function()
@@ -185,7 +185,7 @@ console.newline()
 console.log("No Chest Found")
 
 getgenv().totalServers = getgenv().totalServers + 1
-spawn(function
+spawn(function()
 	Teleport()
 end)
 pcall(function()
