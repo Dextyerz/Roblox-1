@@ -88,7 +88,7 @@ end
 
 function sendPets(coinID)
 	console.newline()
-	console.log('Sending Pets To Chest')
+	console.log('[2] Sending Pets To Chest')
 	equippedPets = {}
     for i, v in pairs(Lib.Save.Get().Pets) do
         if v.e then
@@ -101,12 +101,12 @@ function sendPets(coinID)
 		sendPet(coinID, v)
 	end
 	console.newline()
-	console.log('Pets Sent To Chest')
+	console.log('[3] Pets Sent To Chest')
 
 	Lib.Network.Fired("Remove Coin"):Connect(function(cID)
 		if(cID == coinID) then
 			console.newline()
-			console.log('Chest Destroyed Teleporting To Another Game')
+			console.log('[4] Chest Destroyed Teleporting To Another Game')
 			getgenv().totalServers = getgenv().totalServers + 1
 			syn.queue_on_teleport([[
 				getgenv().totalServers = ]]..totalServers..[[
@@ -118,7 +118,7 @@ function sendPets(coinID)
 	end)
 
 	wait(60)
-	console.log('Pets Took To Long To Destroy Chest Server Hopping Anyways')
+	console.log('[4] Pets Took To Long To Destroy Chest Server Hopping Anyways')
 	getgenv().totalServers = getgenv().totalServers + 1
 	syn.queue_on_teleport([[
 		getgenv().totalServers = ]]..totalServers..[[
@@ -133,7 +133,7 @@ function searchWorld(world)
     coins = (Lib.Network.Invoke("Get Coins"))
     for i,v in pairs(coins) do
         if(v.n == ('Christmas Gingerbread Chest')) then
-            console.log("Found Gingerbread Chest In "..world)
+            console.log("[1] Found Gingerbread Chest In "..world)
 			sendPets(i)
             return true
         end
