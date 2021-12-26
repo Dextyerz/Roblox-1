@@ -110,7 +110,7 @@ function sendPets(coinID)
 			getgenv().totalServers = getgenv().totalServers + 1
 			syn.queue_on_teleport([[
 				getgenv().totalServers = ]]..totalServers..[[
-				loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/QuestCompleter))
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/QuestCompleter"))()
 			]])
 			Teleport()
 			return true
@@ -122,7 +122,7 @@ function sendPets(coinID)
 	getgenv().totalServers = getgenv().totalServers + 1
 	syn.queue_on_teleport([[
 		getgenv().totalServers = ]]..totalServers..[[
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/QuestCompleter))
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/QuestCompleter"))()
 	]])
 	Teleport()
 end
@@ -181,7 +181,9 @@ console.log("No Chest Found")
 getgenv().totalServers = getgenv().totalServers + 1
 syn.queue_on_teleport([[
 	getgenv().totalServers = ]]..totalServers..[[
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/QuestCompleter))
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/QuestCompleter"))()
 ]])
 Teleport()
 
+console.newline()
+console.log("Teleporting To New Server")
