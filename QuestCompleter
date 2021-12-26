@@ -7,6 +7,7 @@ end
 local console = loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/SynapseXConsole/main/maine.lua"))()
 console.new()
 console.windowname('PSX Script Created By 4lve#0001')
+console.clear()
 console.log('Joined Server! Script Created By 4lve#0001')
 console.newline()
 local Lib = require(game.ReplicatedStorage:WaitForChild("Framework"):WaitForChild("Library"))
@@ -79,7 +80,6 @@ end)
 
 
 
-console.clear()
 
 function sendPet(coinID, petID)
     Lib.Network.Fire("change pet target", petID, "Coin", coinID)
@@ -145,8 +145,6 @@ end
 Stage = Lib.Save.Get().ChristmasEventQuest.Stage
 Proggres = Lib.Save.Get().ChristmasEventQuest.Progress
 Needed = Lib.Shared.ChristmasEventQuests[Stage].Needed
-console.new()
-console.clear()
 
 console.formatcolors("Current Job ID: &a"..game.JobId)
 console.newline()
@@ -183,7 +181,6 @@ syn.queue_on_teleport([[
 	getgenv().totalServers = ]]..totalServers..[[
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/QuestCompleter"))()
 ]])
-Teleport()
-
 console.newline()
 console.log("Teleporting To New Server")
+Teleport()
