@@ -107,7 +107,7 @@ function sendPets(coinID)
 		if(cID == coinID) then
 			console.newline()
 			console.log('Chest Destroyed Teleporting To Another Game')
-			getgenv().totalServers = getgenv.totalServers + 1
+			getgenv().totalServers = getgenv().totalServers + 1
 			syn.queue_on_teleport([[
 				getgenv().totalServers = ]]..totalServers..[[
 				loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/QuestCompleter))
@@ -119,7 +119,7 @@ function sendPets(coinID)
 
 	wait(60)
 	console.log('Pets Took To Long To Destroy Chest Server Hopping Anyways')
-	getgenv().totalServers = getgenv.totalServers + 1
+	getgenv().totalServers = getgenv().totalServers + 1
 	syn.queue_on_teleport([[
 		getgenv().totalServers = ]]..totalServers..[[
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/QuestCompleter))
@@ -178,7 +178,7 @@ end
 console.newline()
 console.log("No Chest Found")
 
-getgenv().totalServers = getgenv.totalServers + 1
+getgenv().totalServers = getgenv().totalServers + 1
 syn.queue_on_teleport([[
 	getgenv().totalServers = ]]..totalServers..[[
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/QuestCompleter))
