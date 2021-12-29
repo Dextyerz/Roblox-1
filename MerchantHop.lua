@@ -117,7 +117,6 @@ if (workspace.__THINGS.__REMOTES:WaitForChild("get merchant items"):InvokeServer
         getgenv().itemsBought = ]]..itemsBought..[[
         loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/MerchantHop.lua"))()
     ]])
-    useTeleport()
 else
     console.formatcolors(" - &4Merchant Not Found")
     getgenv().totalServers = getgenv().totalServers + 1
@@ -127,6 +126,4 @@ else
         getgenv().itemsBought = ]]..itemsBought..[[
         loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/MerchantHop.lua"))()
     ]])
-    useTeleport()
 end
-useTeleport()
