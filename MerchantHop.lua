@@ -73,9 +73,6 @@ if not game:IsLoaded() then
 end
 local console = loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/SynapseXConsole/main/maine.lua"))()
 function useTeleport()
-    console.newline()
-    console.newline()
-    console.log('Teleporting To New Server')
     nextTeleport([[
         getgenv().totalServers = ]]..totalServers..[[
         getgenv().totalServersMerchant = ]]..totalServersMerchant..[[
@@ -120,7 +117,10 @@ if (workspace.__THINGS.__REMOTES["get merchant items"]:InvokeServer({})["Level 3
     end
     getgenv().totalServers = getgenv().totalServers + 1
     getgenv().totalServersMerchant = getgenv().totalServersMerchant + 1
+    useTeleport()
 else
     console.formatcolors(" - &4Merchant Not Found")
     getgenv().totalServers = getgenv().totalServers + 1
+    useTeleport()
 end
+useTeleport()
