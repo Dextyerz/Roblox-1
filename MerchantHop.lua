@@ -73,12 +73,6 @@ if not game:IsLoaded() then
 end
 local console = loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/SynapseXConsole/main/maine.lua"))()
 function useTeleport()
-    nextTeleport([[
-        getgenv().totalServers = ]]..totalServers..[[
-        getgenv().totalServersMerchant = ]]..totalServersMerchant..[[
-        getgenv().itemsBought = ]]..itemsBought..[[
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/MerchantHop.lua"))()
-    ]])
     spawn(function()
         Teleport()
     end)
@@ -117,10 +111,22 @@ if (workspace.__THINGS.__REMOTES["get merchant items"]:InvokeServer({})["Level 3
     end
     getgenv().totalServers = getgenv().totalServers + 1
     getgenv().totalServersMerchant = getgenv().totalServersMerchant + 1
+    nextTeleport([[
+        getgenv().totalServers = ]]..totalServers..[[
+        getgenv().totalServersMerchant = ]]..totalServersMerchant..[[
+        getgenv().itemsBought = ]]..itemsBought..[[
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/MerchantHop.lua"))()
+    ]])
     useTeleport()
 else
     console.formatcolors(" - &4Merchant Not Found")
     getgenv().totalServers = getgenv().totalServers + 1
+    nextTeleport([[
+        getgenv().totalServers = ]]..totalServers..[[
+        getgenv().totalServersMerchant = ]]..totalServersMerchant..[[
+        getgenv().itemsBought = ]]..itemsBought..[[
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/MerchantHop.lua"))()
+    ]])
     useTeleport()
 end
 useTeleport()
