@@ -66,19 +66,12 @@ spawn(function()
 		end
 	end
 end)
-
+nextTeleport = syn.queue_on_teleport or queue_on_teleport
 
 if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 local console = loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/SynapseXConsole/main/maine.lua"))()
-local Lib = require(game.ReplicatedStorage:WaitForChild("Framework"):WaitForChild("Library"))
-while not Lib.Loaded do
-	game:GetService("RunService").Heartbeat:Wait()
-end
-
-nextTeleport = syn.queue_on_teleport or queue_on_teleport
-
 function useTeleport()
     console.newline()
     console.newline()
@@ -89,8 +82,11 @@ function useTeleport()
         getgenv().itemsBought = ]]..itemsBought..[[
         loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/MerchantHop.lua"))()
     ]])
-    Teleport()
+    spawn(function()
+        Teleport()
+    end)
 end
+useTeleport()
 
 
 console.new()
@@ -124,9 +120,7 @@ if (workspace.__THINGS.__REMOTES["get merchant items"]:InvokeServer({})["Level 3
     end
     getgenv().totalServers = getgenv().totalServers + 1
     getgenv().totalServersMerchant = getgenv().totalServersMerchant + 1
-    useTeleport()
 else
     console.formatcolors(" - &4Merchant Not Found")
     getgenv().totalServers = getgenv().totalServers + 1
-    useTeleport()
 end
