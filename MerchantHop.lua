@@ -98,11 +98,11 @@ console.newline()
 console.log("Activity:")
 console.newline()
 
-if (workspace.__THINGS.__REMOTES["get merchant items"]:InvokeServer({})["Level 3"]) then
+if (workspace.__THINGS.__REMOTES:WaitForChild("get merchant items"):InvokeServer({})["Level 3"]) then
     console.formatcolors(" - &aMerchant Found")
     notOutOfStock = true
     while notOutOfStock do
-        notOutOfStock = workspace.__THINGS.__REMOTES["buy merchant item"]:InvokeServer({3})
+        notOutOfStock = workspace.__THINGS.__REMOTES:WaitForChild("buy merchant item"):InvokeServer({3})
         if notOutOfStock then
             console.newline()
             console.formatcolors(" - &aMerchant Pet Bought")
