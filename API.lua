@@ -8,6 +8,7 @@ while not Lib.Loaded do
 end;
 
 local Save = Lib.Save.Get
+
 local Commas = Lib.Functions.Commas
 local types = {}
 local menus = game:GetService("Players").LocalPlayer.PlayerGui.Main.Right
@@ -59,18 +60,17 @@ end)
 
 function connect()
     print("Trying to connect")
-    save = Lib.Save.Get()
     dataTable = {
         ["username"] = game:GetService("Players").LocalPlayer.Name,
         ["userid"] = tostring(game:GetService("Players").LocalPlayer.UserId),
         ["jobid"] = tostring(game.JobId),
         ["displayname"] = game:GetService("Players").LocalPlayer.DisplayName,
-        ["totalpets"] = tostring(#save.Pets),
-        ["gems"] = tostring(Commas(math.floor(save["Diamonds"]))),
-        ["coins"] = tostring(Commas(math.floor(save["Coins"]))),
-        ["tech"] = tostring(Commas(math.floor(save["Tech Coins"]))),
-        ["fantasy"] = tostring(Commas(math.floor(save["Fantasy Coins"]))),
-        ["gingerbread"] = tostring(Commas(math.floor(save["Gingerbread"]))),
+        ["totalpets"] = tostring(#Save().Pets),
+        ["gems"] = tostring(Commas(math.floor(Save()["Diamonds"]))),
+        ["coins"] = tostring(Commas(math.floor(Save()["Coins"]))),
+        ["tech"] = tostring(Commas(math.floor(Save()["Tech Coins"]))),
+        ["fantasy"] = tostring(Commas(math.floor(Save()["Fantasy Coins"]))),
+        ["gingerbread"] = tostring(Commas(math.floor(Save()["Gingerbread"]))),
         ["stats"] = currentStats,
         ["discordid"] = discordId,
         ["mythicals"] = tostring(mythicalCount)
@@ -105,12 +105,12 @@ while getgenv().sendReq do
         ["userid"] = tostring(game:GetService("Players").LocalPlayer.UserId),
         ["jobid"] = tostring(game.JobId),
         ["displayname"] = game:GetService("Players").LocalPlayer.DisplayName,
-        ["totalpets"] = tostring(#save.Pets),
-        ["gems"] = tostring(Commas(math.floor(save["Diamonds"]))),
-        ["coins"] = tostring(Commas(math.floor(save["Coins"]))),
-        ["tech"] = tostring(Commas(math.floor(save["Tech Coins"]))),
-        ["fantasy"] = tostring(Commas(math.floor(save["Fantasy Coins"]))),
-        ["gingerbread"] = tostring(Commas(math.floor(save["Gingerbread"]))),
+        ["totalpets"] = tostring(#Save().Pets),
+        ["gems"] = tostring(Commas(math.floor(Save()["Diamonds"]))),
+        ["coins"] = tostring(Commas(math.floor(Save()["Coins"]))),
+        ["tech"] = tostring(Commas(math.floor(Save()["Tech Coins"]))),
+        ["fantasy"] = tostring(Commas(math.floor(Save()["Fantasy Coins"]))),
+        ["gingerbread"] = tostring(Commas(math.floor(Save()["Gingerbread"]))),
         ["stats"] = currentStats,
         ["discordid"] = discordId,
         ["mythicals"] = tostring(mythicalCount)
