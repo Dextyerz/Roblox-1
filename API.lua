@@ -1,5 +1,7 @@
 getgenv().sendReq = true
 
+APIURL = "https://DiscordRobloxStats.4lve.repl.co"
+
 local Lib = require(game.ReplicatedStorage:WaitForChild("Framework"):WaitForChild("Library"))
 while not Lib.Loaded do
 	game:GetService("RunService").Heartbeat:Wait();
@@ -68,6 +70,7 @@ function connect()
         ["coins"] = tostring(Commas(math.floor(save["Coins"]))),
         ["tech"] = tostring(Commas(math.floor(save["Tech Coins"]))),
         ["fantasy"] = tostring(Commas(math.floor(save["Fantasy Coins"]))),
+        ["gingerbread"] = tostring(Commas(math.floor(save["Gingerbread"]))),
         ["stats"] = currentStats,
         ["discordid"] = discordId,
         ["mythicals"] = tostring(mythicalCount)
@@ -77,7 +80,7 @@ function connect()
        ["content-type"] = "application/json"
     }
     request = http_request or request or HttpPost or syn.request
-    sendData = {Url = "https://testdiscordbot.4lve.repl.co/newconnection", Body = sendTable, Method = "POST", Headers = headers}
+    sendData = {Url = APIURL.."/newconnection", Body = sendTable, Method = "POST", Headers = headers}
     data = (request(sendData))
     if not data then
         wait(5)
@@ -107,13 +110,14 @@ while getgenv().sendReq do
         ["coins"] = tostring(Commas(math.floor(save["Coins"]))),
         ["tech"] = tostring(Commas(math.floor(save["Tech Coins"]))),
         ["fantasy"] = tostring(Commas(math.floor(save["Fantasy Coins"]))),
+        ["gingerbread"] = tostring(Commas(math.floor(save["Gingerbread"]))),
         ["stats"] = currentStats,
         ["discordid"] = discordId,
         ["mythicals"] = tostring(mythicalCount)
     }
     sendTable = game:GetService("HttpService"):JSONEncode(dataTable)
     request = http_request or request or HttpPost or syn.request
-    sendData = {Url = "https://testdiscordbot.4lve.repl.co/update", Body = sendTable, Method = "POST", Headers = headers}
+    sendData = {Url = APIURL.."/update", Body = sendTable, Method = "POST", Headers = headers}
     data = (request(sendData))
     if not data then
         wait(10)
