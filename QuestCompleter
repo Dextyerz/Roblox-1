@@ -78,6 +78,7 @@ spawn(function()
 	end
 end)
 
+nextTeleport = queue_on_teleport or syn.queue_on_teleport
 
 
 
@@ -112,7 +113,7 @@ function sendPets(coinID)
 				Teleport()
 			end)
 			pcall(function()
-				syn.queue_on_teleport([[
+				nextTeleport([[
 				getgenv().totalServers = ]]..totalServers..[[
 				loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/QuestCompleter"))()
 				]])
@@ -128,7 +129,7 @@ function sendPets(coinID)
 		Teleport()
 	end)
 	pcall(function()
-		syn.queue_on_teleport([[
+		nextTeleport([[
 		getgenv().totalServers = ]]..totalServers..[[
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/QuestCompleter"))()
 		]])
@@ -189,7 +190,7 @@ spawn(function()
 	Teleport()
 end)
 pcall(function()
-	syn.queue_on_teleport([[
+	nextTeleport([[
 	getgenv().totalServers = ]]..totalServers..[[
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/QuestCompleter"))()
 	]])
