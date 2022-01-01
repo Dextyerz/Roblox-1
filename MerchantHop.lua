@@ -1,4 +1,4 @@
-getgenv().mode = 2
+
 if not getgenv().totalServers then
 	getgenv().totalServers = 0
     getgenv().totalServersMerchant = 0
