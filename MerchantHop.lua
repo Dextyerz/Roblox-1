@@ -91,14 +91,14 @@ function useTeleport()
         getgenv().totalServers = ]]..totalServers..[[
         getgenv().totalServersMerchant = ]]..totalServersMerchant..[[
         getgenv().itemsBought = ]]..itemsBought..[[
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/4lve/Roblox/main/MerchantHop.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Dextyerz/Roblox-1/main/MerchantHop.lua"))()
     ]])
     Teleport()
 end
 
 
 console.new()
-console.windowname('Merchant Hop Created By 4lve#0001')
+console.windowname('Merchant Hop Created By 4lve#0001 Updated By Dextyerz#1000')
 console.clear()
 
 console.log("Server Info:")
