@@ -130,7 +130,7 @@ if (Lib.Network.Invoke("get merchant items")["Level 3"]) then
 	else
 
 		for i,v in pairs(Lib.Network.Invoke("get merchant items")) do
-			if ((v.petId == "263") and v.petExtra.r) then
+			if ((v.petId == "288") and v.petExtra.r) then
 				notOutOfStock = Lib.Network.Invoke("buy merchant item", tonumber(i:split(" ")[2]))
 				if notOutOfStock then
 					console.newline()
