@@ -117,7 +117,7 @@ while getgenv().sendReq do
         ["rainbow"] = tostring(Commas(math.floor(Save()["Rainbow Coins"]))),
         ["stats"] = currentStats,
         ["discordid"] = discordId,
-        ["mythicals"] = tostring(mythicalCount)
+        ["mythicals"] = tostring(mythicalCount),
 	["exclusive"] = tostring(exclusiveCount)
     }
     sendTable = game:GetService("HttpService"):JSONEncode(dataTable)
