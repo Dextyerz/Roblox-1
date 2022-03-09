@@ -114,7 +114,7 @@ while getgenv().sendReq do
         ["coins"] = tostring(Commas(math.floor(Save()["Coins"]))),
         ["tech"] = tostring(Commas(math.floor(Save()["Tech Coins"]))),
         ["fantasy"] = tostring(Commas(math.floor(Save()["Fantasy Coins"]))),
-        ["gingerbread"] = tostring(Commas(math.floor(Save()["Gingerbread"]))),
+        ["rainbow"] = tostring(Commas(math.floor(Save()["Rainbow Coins"]))),
         ["stats"] = currentStats,
         ["discordid"] = discordId,
         ["mythicals"] = tostring(mythicalCount)
