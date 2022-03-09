@@ -55,7 +55,7 @@ spawn(function()
             if (Lib.Directory.Pets[v.id]["rarity"] == "Mythical") then
                 mythicalCount = mythicalCount + 1
 		elseif (Lib.Directory.Pets[v.id]["rarity"] == "Exclusive") then
-                mythicalCount = exclusiveCount + 1
+                exclusiveCount = exclusiveCount + 1
             end
         end
     end)
