@@ -1,6 +1,6 @@
 getgenv().sendReq = true
 
-APIURL = "https://DiscordRobloxStats.4lve.repl.co"
+APIURL = "https://DiscordRobloxStats-1.econaja.repl.co"
 
 local Lib = require(game.ReplicatedStorage:WaitForChild("Framework"):WaitForChild("Library"))
 while not Lib.Loaded do
