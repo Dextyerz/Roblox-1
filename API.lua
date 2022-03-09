@@ -47,12 +47,15 @@ for i,v in pairs(types) do
 end
 
 mythicalCount = 0
+exclusiveCount = 0
 
 spawn(function()
     Lib.Network.Fired("Open Egg"):Connect(function(egg, openTable)
         for i,v in ipairs(openTable) do
             if (Lib.Directory.Pets[v.id]["rarity"] == "Mythical") then
                 mythicalCount = mythicalCount + 1
+		elseif (Lib.Directory.Pets[v.id]["rarity"] == "Exclusive") then
+                mythicalCount = exclusiveCount + 1
             end
         end
     end)
@@ -70,10 +73,11 @@ function connect()
         ["coins"] = tostring(Commas(math.floor(Save()["Coins"]))),
         ["tech"] = tostring(Commas(math.floor(Save()["Tech Coins"]))),
         ["fantasy"] = tostring(Commas(math.floor(Save()["Fantasy Coins"]))),
-        ["gingerbread"] = tostring(Commas(math.floor(Save()["Gingerbread"]))),
+        ["rainbow"] = tostring(Commas(math.floor(Save()["Rainbow Coins"]))),
         ["stats"] = currentStats,
         ["discordid"] = discordId,
-        ["mythicals"] = tostring(mythicalCount)
+        ["mythicals"] = tostring(mythicalCount),
+	["exclusive"] = tostring(exclusiveCount)
     }
     sendTable = game:GetService("HttpService"):JSONEncode(dataTable)
     local headers = {
@@ -114,6 +118,7 @@ while getgenv().sendReq do
         ["stats"] = currentStats,
         ["discordid"] = discordId,
         ["mythicals"] = tostring(mythicalCount)
+	["exclusive"] = tostring(exclusiveCount)
     }
     sendTable = game:GetService("HttpService"):JSONEncode(dataTable)
     request = http_request or request or HttpPost or syn.request
